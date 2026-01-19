@@ -105,13 +105,6 @@
             <span class="value">{{ $id }}</span>
         </div>
 
-        {{-- Bạn có thể mở rộng thêm --}}
-        {{-- 
-        <div class="info-row">
-            <span class="label">Name</span>
-            <span class="value">{{ $product->name }}</span>
-        </div>
-        --}}
     </div>
 
     <div class="actions">
