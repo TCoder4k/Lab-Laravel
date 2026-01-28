@@ -7,75 +7,73 @@
 
     <style>
         body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: #f4f6f8;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f9;
             margin: 0;
-            padding: 0;
         }
 
         .container {
-            max-width: 600px;
-            margin: 80px auto;
-            background: #ffffff;
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .title {
-            text-align: center;
-            margin-bottom: 30px;
+        .header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
         }
 
-        .title h1 {
+        .header h1 {
             margin: 0;
-            font-size: 28px;
             color: #333;
         }
 
         .product-info {
-            border-top: 1px solid #eee;
-            padding-top: 20px;
+            margin-bottom: 30px;
         }
 
         .info-row {
             display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px dashed #ddd;
-        }
-
-        .info-row:last-child {
-            border-bottom: none;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
         }
 
         .label {
+            width: 180px;
             font-weight: bold;
             color: #555;
         }
 
         .value {
-            color: #007bff;
+            color: #333;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
         }
 
         .actions {
-            text-align: center;
-            margin-top: 30px;
+            display: flex;
+            gap: 10px;
         }
 
         .btn {
-            display: inline-block;
-            padding: 10px 22px;
-            margin: 0 8px;
-            border-radius: 25px;
+            padding: 8px 16px;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: bold;
+            font-size: 14px;
+            color: #fff;
             transition: 0.3s;
         }
 
         .btn-back {
             background: #6c757d;
-            color: #fff;
         }
 
         .btn-back:hover {
@@ -83,33 +81,42 @@
         }
 
         .btn-edit {
-            background: #28a745;
-            color: #fff;
+            background: #ffc107;
+            color: #000;
         }
 
         .btn-edit:hover {
-            background: #218838;
+            background: #e0a800;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="title">
+    <div class="header">
         <h1>Product Detail</h1>
     </div>
 
     <div class="product-info">
         <div class="info-row">
-            <span class="label">Product ID</span>
-            <span class="value">{{ $id }}</span>
+            <div class="label">Product ID</div>
+            <div class="value">{{ $id }}</div>
         </div>
 
+        {{-- <div class="info-row">
+            <div class="label">Product Name</div>
+            <div class="value">{{ $product['name'] }}</div>
+        </div>
+
+        <div class="info-row">
+            <div class="label">Price</div>
+            <div class="value price">{{ number_format($product['price']) }} đ</div>
+        </div> --}}
     </div>
 
     <div class="actions">
-        <a href="{{ url()->previous() }}" class="btn btn-back">← Back</a>
-        <a href="#" class="btn btn-edit">✏ Edit</a>
+        <a href="{{ route('index') }}" class="btn btn-back">← Back to List</a>
+        <a href="/product/edit/{{ $id }}" class="btn btn-edit">✏ Edit</a>
     </div>
 </div>
 

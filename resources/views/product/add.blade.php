@@ -59,7 +59,8 @@
 <div class="container">
     <h2>Add New Product</h2>
 
-    <form action="" method="post">
+    <form action="/product/store" method="post">
+        @csrf
         <label for="name">Product Name</label>
         <input type="text" id="name" name="name" placeholder="Enter product name" required>
 
