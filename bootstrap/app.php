@@ -14,7 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         //
-        $middleware->appendToGroup('web', CheckAge::class);
+        // $middleware->appendToGroup('web', CheckAge::class);
         // $middleware->appendToGroup('web', CheckTimeAccess::class);
 
     })
